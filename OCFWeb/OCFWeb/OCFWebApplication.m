@@ -95,7 +95,7 @@
 }
 
 - (void)_handleResponse:(id)response withOriginalRequest:(OCFWebServerRequest *)originalRequest {
-  __typeof__(self) __weak weakSelf = self;
+  __typeof__(self) __block weakSelf = self;
   if([response isKindOfClass:[OCFResponse class]]) {
     [originalRequest respondWith:[weakSelf makeValidWebServerResponseWithResponse:response]];
     return;
@@ -143,7 +143,7 @@
 
 - (void)runOnPort:(NSUInteger)port {
   self.server = [OCFWebServer new];
-  __typeof__(self) __weak weakSelf = self;
+  __typeof__(self) __block weakSelf = self;
   [self.server addHandlerWithMatchBlock:^OCFWebServerRequest *(NSString *requestMethod, NSURL *requestURL, NSDictionary *requestHeaders, NSString *urlPath, NSDictionary *urlQuery) {
     Class requestClass = Nil;
     NSString *contentType = requestHeaders[@"Content-Type"];
