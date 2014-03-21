@@ -10,6 +10,7 @@
 #import "OCFMustache.h"
 #import "OCFRequest+Private.h"
 #import "OCFRequest_Extension.h"
+#import <objc/runtime.h>
 
 #import "NSDictionary+OCFConfigurationAdditions.h"
 #import "OCFWebServerRequest+OCFWebAdditions.h"
