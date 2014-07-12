@@ -19,6 +19,6 @@ OCFWeb is a web application framework written in Objective-C. You can use OCFWeb
 
   s.requires_arc = true
 	s.dependency 'SOCKit', '~> 1.1'
-	s.dependency 'GRMustache', '~> 6.7'
+	s.dependency 'GRMustache', '~> 7.0'
 
 end
