@@ -10,7 +10,6 @@
 		240D8007F64D4495AE0BA4D9 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D92E6B0A2F124FD387BD48AC /* libPods.a */; };
 		AB94260F17AE51AB0053D2F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB94260E17AE51AB0053D2F6 /* Cocoa.framework */; };
 		AB94261917AE51AB0053D2F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB94261717AE51AB0053D2F6 /* InfoPlist.strings */; };
-		AB94262517AE51AC0053D2F6 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB94262417AE51AC0053D2F6 /* SenTestingKit.framework */; };
 		AB94262617AE51AC0053D2F6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB94260E17AE51AB0053D2F6 /* Cocoa.framework */; };
 		AB94262917AE51AC0053D2F6 /* OCFWeb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AB94260B17AE51AB0053D2F6 /* OCFWeb.framework */; };
 		AB94262F17AE51AC0053D2F6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB94262D17AE51AC0053D2F6 /* InfoPlist.strings */; };
@@ -63,7 +62,6 @@
 		AB94261A17AE51AB0053D2F6 /* OCFWeb-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OCFWeb-Prefix.pch"; sourceTree = "<group>"; };
 		AB94261B17AE51AB0053D2F6 /* OCFWeb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFWeb.h; sourceTree = "<group>"; };
 		AB94262317AE51AC0053D2F6 /* OCFWebTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OCFWebTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB94262417AE51AC0053D2F6 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		AB94262C17AE51AC0053D2F6 /* OCFWebTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "OCFWebTests-Info.plist"; sourceTree = "<group>"; };
 		AB94262E17AE51AC0053D2F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AB94263017AE51AC0053D2F6 /* OCFWebTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OCFWebTests.h; sourceTree = "<group>"; };
@@ -108,7 +106,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB94262517AE51AC0053D2F6 /* SenTestingKit.framework in Frameworks */,
 				AB94262617AE51AC0053D2F6 /* Cocoa.framework in Frameworks */,
 				AB94262917AE51AC0053D2F6 /* OCFWeb.framework in Frameworks */,
 			);
@@ -141,7 +138,6 @@
 			isa = PBXGroup;
 			children = (
 				AB94260E17AE51AB0053D2F6 /* Cocoa.framework */,
-				AB94262417AE51AC0053D2F6 /* SenTestingKit.framework */,
 				AB94261017AE51AB0053D2F6 /* Other Frameworks */,
 				D92E6B0A2F124FD387BD48AC /* libPods.a */,
 			);
@@ -394,7 +390,7 @@
 			name = OCFWebTests;
 			productName = OCFWebTests;
 			productReference = AB94262317AE51AC0053D2F6 /* OCFWebTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -402,6 +398,7 @@
 		AB94260217AE51AB0053D2F6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Objective-Cloud.com";
 			};
@@ -648,12 +645,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCFWeb/OCFWeb-Prefix.pch";
 				INFOPLIST_FILE = "OCFWebTests/OCFWebTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -661,12 +660,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
-				FRAMEWORK_SEARCH_PATHS = "\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+					"$(inherited)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OCFWeb/OCFWeb-Prefix.pch";
 				INFOPLIST_FILE = "OCFWebTests/OCFWebTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
